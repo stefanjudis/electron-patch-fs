@@ -30,6 +30,8 @@ Undo monkey patch and bring back electrons patched fs functions
 **Note:** Repeated calls will throw an exception ( patch first ).
 
 
+### Example
+
 ```javascript
 const patchFs = require( 'electron-patch-fs' );
 const fs      = require( 'fs' );
