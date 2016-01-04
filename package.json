@@ -1,0 +1,39 @@
+{
+  "name": "electron-patch-fs",
+  "version": "1.0.0",
+  "description": "Monkey path electrons fs functions with the original ones",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "npm run lint && nyc ava index.spec.js",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefanjudis/electron-patch-fs.git"
+  },
+  "keywords": [
+    "electron",
+    "fs"
+  ],
+  "author": "Stefan Judis <stefanjudis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanjudis/electron-patch-fs/issues"
+  },
+  "config": {
+    "nyc": {
+      "exclude": [
+        "original/**/*.js"
+      ]
+    }
+  },
+  "files": [ "index.js", "original" ],
+  "homepage": "https://github.com/stefanjudis/electron-patch-fs#readme",
+  "devDependencies": {
+    "ava": "^0.9.1",
+    "coveralls": "^2.11.6",
+    "eslint": "^1.10.3",
+    "nyc": "^5.2.0"
+  }
+}
