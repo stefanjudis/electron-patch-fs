@@ -1,6 +1,6 @@
 {
   "name": "electron-patch-fs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Monkey path electrons fs functions with the original ones",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,10 @@
       ]
     }
   },
-  "files": [ "index.js", "original" ],
+  "files": [
+    "index.js",
+    "original"
+  ],
   "homepage": "https://github.com/stefanjudis/electron-patch-fs#readme",
   "devDependencies": {
     "ava": "^0.9.1",
