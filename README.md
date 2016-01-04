@@ -26,7 +26,7 @@ This goes for the functions `open` and `openSync`.
 
 ### `patchFs.unpatch()`
 
-Undo monkey patch and bring back electrons patched fs functions
+Undo monkey patch and bring back electrons patched fs functions.
 
 **Note:** Repeated calls will throw an exception ( patch first ).
 
