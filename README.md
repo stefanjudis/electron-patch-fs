@@ -5,8 +5,9 @@
 
 Monkey patch electrons fs functions with the original ones
 
-Electron patch the `fs` functions `open` and `openSync` which can lead to
-errors when dealing with `.asar` file operations.
+Electron patches the native `fs` functions `open` and `openSync` which can lead to errors when dealing with `.asar` file operations like copying and unzipping.
+
+To avoid these errors `electron-patch-fs` brings back the native functionality.
 
 ## Install
 
