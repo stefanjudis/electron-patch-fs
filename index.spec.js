@@ -14,6 +14,10 @@ test( 'patch', function( t ) {
   patcher.patch();
 
   t.notSame( fs.open.toString(), 'function () {}' );
+
+  t.throws( function() {
+    patcher.patch();
+  } );
 } );
 
 test( 'unpatch', function( t ) {

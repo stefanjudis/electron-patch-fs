@@ -5,7 +5,7 @@ let originals = require( './original/index' );
 
 /**
  * Modules and functions to be patched
- * 
+ *
  * @type {Array}
  */
 const PATCHES = [
@@ -29,6 +29,12 @@ let cache = {};
  * changed by electron
  */
 function patch() {
+  if ( Object.keys( cache ).length ) {
+    throw new Error(
+      '`patch` was called again. Make sure you called `unpatch` before.'
+    );
+  }
+
   PATCHES.forEach( function( patch ) {
     var module = require( patch.name );
 
