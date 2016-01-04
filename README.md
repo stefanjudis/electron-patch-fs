@@ -28,11 +28,10 @@ fs.open( '/some/path/foo.asar', 'r', function() {
 } );
 ```
 
---------------------------------------------------------
+### Thanks
 
-#### I want to thank all these [people](./THANKS.md) for their great work!!!
+I want to thank all these [people](./THANKS.md) for their great work!!!
 
-
-## License
+### License
 
 MIT
