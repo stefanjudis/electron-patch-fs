@@ -16,6 +16,20 @@ npm install electron-patch-fs
 
 ## Basic usage
 
+### `patchFs.patch()``
+
+Monkey patch the file system functions and replace them with the original ones.
+This goes for the functions `open` and `openSync`.
+
+**Note:** Repeated calls will throw an exception ( unpatch first again ).
+
+### `patchFs.unpatch()``
+
+Undo monkey patch and bring back electrons patched fs functions
+
+**Note:** Repeated calls will throw an exception ( patch first ).
+
+
 ```javascript
 const patchFs = require( 'electron-patch-fs' );
 const fs      = require( 'fs' );
