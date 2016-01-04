@@ -1,3 +1,6 @@
+[![Build Status](http://img.shields.io/travis/stefanjudis/electron-patch-fs.svg?style=flat)](https://travis-ci.org/stefanjudis/electron-patch-fs) [![npm version](http://img.shields.io/npm/v/electron-patch-fs.svg?style=flat)](https://www.npmjs.org/package/electron-patch-fs) [![npm downloads](http://img.shields.io/npm/dm/electron-patch-fs.svg?style=flat)](https://www.npmjs.org/package/electron-patch-fs) [![Coverage Status](http://img.shields.io/coveralls/stefanjudis/electron-patch-fs.svg?style=flat)](https://coveralls.io/r/stefanjudis/electron-patch-fs?branch=master) [![Uses greenkeeper.io](https://img.shields.io/badge/Uses-greenkeeper.io-green.svg)](http://greenkeeper.io/)
+
+
 # electron-patch-fs
 
 Monkey patch electrons fs functions with the original ones

@@ -14,7 +14,8 @@
   },
   "keywords": [
     "electron",
-    "fs"
+    "fs",
+    "asar"
   ],
   "author": "Stefan Judis <stefanjudis@gmail.com>",
   "license": "MIT",
