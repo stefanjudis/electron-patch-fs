@@ -29,12 +29,15 @@
       ]
     }
   },
-  "files": [ "index.js", "original" ],
+  "files": [
+    "index.js",
+    "original"
+  ],
   "homepage": "https://github.com/stefanjudis/electron-patch-fs#readme",
   "devDependencies": {
     "ava": "^0.9.1",
     "coveralls": "^2.11.6",
     "eslint": "^1.10.3",
-    "nyc": "^5.2.0"
+    "nyc": "^5.3.0"
   }
 }
