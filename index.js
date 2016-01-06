@@ -3,13 +3,6 @@
 let original = require( 'original-fs' );
 let fs       = require( 'fs' );
 
-/**
- * Modules and functions to be patched
- *
- * @type {Array}
- */
-const PATCHES = Object.keys( original );
-
 
 /**
  * Object cache for electron functions
@@ -30,11 +23,17 @@ function patch() {
     );
   }
 
-  PATCHES.forEach( function( patch ) {
+  for ( var patch in original ) {
     cache[ patch ] = fs[ patch ];
 
-    fs[ patch ] = original[ patch ];
-  } );
+    // some properties are read-only and
+    // can't be reassigned
+    try {
+      fs[ patch ] = original[ patch ];
+    } catch( e ) {
+      delete cache[ patch ];
+    }
+  }
 }
 
 
@@ -49,9 +48,9 @@ function unpatch() {
     );
   }
 
-  PATCHES.forEach( function( patch ) {
+  for ( var patch in cache ) {
     fs[ patch ] = cache[ patch ];
-  } );
+  }
 
   cache = {};
 }
