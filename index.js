@@ -1,19 +1,14 @@
 'use strict';
 
-let originals = require( './original/index' );
-
+let original = require( 'original-fs' );
+let fs       = require( 'fs' );
 
 /**
  * Modules and functions to be patched
  *
  * @type {Array}
  */
-const PATCHES = [
-  {
-    name : 'fs',
-    fns  : [ 'open', 'openSync' ]
-  }
-];
+const PATCHES = Object.keys( original );
 
 
 /**
@@ -31,22 +26,14 @@ let cache = {};
 function patch() {
   if ( Object.keys( cache ).length ) {
     throw new Error(
-      '`patch` was called again. Make sure you called `unpatch` before.'
+      '`patch` was called multiple times. Make sure you called `unpatch` before.'
     );
   }
 
   PATCHES.forEach( function( patch ) {
-    var module = require( patch.name );
+    cache[ patch ] = fs[ patch ];
 
-    patch.fns.forEach( function( fn ) {
-      if ( ! cache[ patch.name ] ) {
-        cache[ patch.name ] = {};
-      }
-
-      cache[ patch.name ][ fn ] = module[ fn ];
-
-      module[ fn ] = originals[ patch.name ][ fn ];
-    } );
+    fs[ patch ] = original[ patch ];
   } );
 }
 
@@ -63,11 +50,7 @@ function unpatch() {
   }
 
   PATCHES.forEach( function( patch ) {
-    var module = require( patch.name );
-
-    patch.fns.forEach( function( fn ) {
-      module[ fn ] = cache[ patch.name ][ fn ];
-    } );
+    fs[ patch ] = cache[ patch ];
   } );
 
   cache = {};

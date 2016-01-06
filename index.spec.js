@@ -1,6 +1,17 @@
 import test from 'ava';
-import patcher from './index';
+import proxyquire from 'proxyquire';
 import fs from 'fs';
+
+proxyquire.noCallThru();
+
+let patcher = proxyquire(
+  './index',
+  {
+    'original-fs' : {
+      open : function() { foo; }
+    }
+  }
+);
 
 let originalOpen;
 
