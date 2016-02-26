@@ -36,7 +36,7 @@
   "homepage": "https://github.com/stefanjudis/electron-patch-fs#readme",
   "devDependencies": {
     "ava": "^0.9.1",
-    "coveralls": "^2.11.6",
+    "coveralls": "^2.11.8",
     "eslint": "^1.10.3",
     "nyc": "^5.2.0",
     "proxyquire": "^1.7.3"
