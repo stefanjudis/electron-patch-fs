@@ -35,7 +35,7 @@
   ],
   "homepage": "https://github.com/stefanjudis/electron-patch-fs#readme",
   "devDependencies": {
-    "ava": "^0.9.1",
+    "ava": "^0.19.1",
     "coveralls": "^2.11.6",
     "eslint": "^1.10.3",
     "nyc": "^6.6.1",
